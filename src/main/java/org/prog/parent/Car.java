@@ -5,19 +5,27 @@ package org.prog.parent;
 public class Car {
 
     public String color;
+    public String ownerName;
 
     public Car(String color) {
         this.color = color;
+    }
+
+    public Car() {
+
     }
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Car) {
             Car c = (Car) obj;
-            if (this.color != null) {
-                return this.color.equals(c.color);
-            } else {
-                return this.color == c.color;
+            boolean carColorsAreTheSame=this.color.equals(c.color)&&
+                    this.ownerName.equals(c.ownerName);
+//            if (this.color != null) {
+//                return this.color.equals(c.color);
+//            } else
+            {
+                return carColorsAreTheSame;
             }
         }
         return false;
@@ -30,6 +38,10 @@ public class Car {
         }
         return 0;
     }
+    @Override
+    public String toString() {
+            return color+ "car belongs to"+ownerName;
+        }
 
     public void goTo() {
         goTo("anywhere");
