@@ -20,11 +20,10 @@ public class Main {
         Car carTwo = new Car("red");
 
 //        carOne.color = "red";
-//        carTwo.color = "red";
+        carTwo.color = "red";
 
-//        System.out.println(carOne.equals(carTwo));
+        System.out.println(carOne.equals(carTwo));
         System.out.println(carOne.hashCode());
         System.out.println(carTwo.hashCode());
-
     }
 }

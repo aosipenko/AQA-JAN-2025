@@ -2,8 +2,10 @@ package org.prog.collections;
 
 import org.prog.parent.Car;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 // 1. bind one person to a single car
 // 2. bind one person to multiple cars
@@ -18,23 +20,18 @@ public class MapsPractice {
         String driver2 = "Jane";
         String driver3 = "Joe";
 
-        Map< String, Set<Car>> ownedCars=new HashMap<>();
-        ownedCars.put(driver1, new HashSet<>());
-        ownedCars.put(driver2, new HashSet<>());
-        ownedCars.put(driver3, new HashSet<>());
-
-//        Map<String, List<Car>> ownedCars = new HashMap<>();
-//        ownedCars.put(driver1, new ArrayList<>());
-//        ownedCars.put(driver2, new ArrayList<>());
-//        ownedCars.put(driver3, new ArrayList<>());
+        Map<String, List<Car>> ownedCars = new HashMap<>();
+        ownedCars.put(driver1, new ArrayList<>());
+        ownedCars.put(driver2, new ArrayList<>());
+        ownedCars.put(driver3, new ArrayList<>());
 
         ownedCars.get(driver1).add(new Car("Red"));
-        ownedCars.get(driver1).add(new Car("Red"));
-        ownedCars.get(driver1).add(new Car("Red"));
-        ownedCars.get(driver1).add(new Car("Red"));
+        ownedCars.get(driver1).add(new Car("Blue"));
+        ownedCars.get(driver1).add(new Car("Black"));
+        ownedCars.get(driver1).add(new Car("Purple"));
 
         ownedCars.get(driver2).add(new Car("Blue"));
-        ownedCars.get(driver2).add(new Car("Blue"));
+        ownedCars.get(driver2).add(new Car("Yellow"));
 
         ownedCars.get(driver3).add(new Car("White"));
 
@@ -42,20 +39,9 @@ public class MapsPractice {
         countCarsForDriver(driver2, ownedCars);
         countCarsForDriver(driver3, ownedCars);
     }
-    List<String> colors = List.of("Red", "Blue", "Green");
 
-    String result = colors.stream()
-            .collect(Collectors.joining(", "));
-
-
-    public static void countCarsForDriver (String driverName, Map<String, Set<Car>> cars)
-    {Set<Car> ownedCars=cars.get(driverName);
-        System.out.println(driverName + " has access to " + ownedCars.size() + " unique cars:" + ownedCars);
+    public static void countCarsForDriver(String driverName, Map<String, List<Car>> cars) {
+        List<Car> carsOfOwner = cars.get(driverName);
+        System.out.println(driverName + " has access to " + carsOfOwner.size() + " cars");
     }
-
-//    public static void countCarsForDriver(String driverName, Map<String, List<Car>> cars) {
-//        List<Car> carsOfOwner = cars.get(driverName);
-//        System.out.println(driverName + " has access to " + carsOfOwner.size() + " cars");
-//    }
 }
-
