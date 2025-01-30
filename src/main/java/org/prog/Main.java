@@ -23,14 +23,14 @@ public class Main {
         carTwo.color = "blue";
         thatCar.color = "black";
 
-        carOne.goTo();
-        carTwo.goTo();
+        carOne.goTo("somewhere");
+        carTwo.goTo("somewhere");
 
         paintCar(carOne, "white");
         paintCar(carTwo, "Purple");
 
-        thatCar.goTo();
-        aliceCar.goTo();
+        thatCar.goTo("somewhere");
+        aliceCar.goTo("somewhere");
 
         int i = 10;
         increaseI(i);
