@@ -11,5 +11,6 @@ import java.util.List;
 @NoArgsConstructor
 public class ResultsDto {
 
-    public List<PersonDto> results;
+    private List<PersonDto> results;  // Список з об'єктами PersonDto
+
 }
