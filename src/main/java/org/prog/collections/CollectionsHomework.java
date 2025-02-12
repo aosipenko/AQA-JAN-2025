@@ -12,7 +12,7 @@ import java.util.*;
 
 /**
  * Car1 -> John
- * Car2 -> John, Jane
+ * Car2 -> John, Jane, KAte, Bob
  * Car3 -> Jane
  * Car4 ->
  * Car5 -> Sarah, Peter
@@ -48,24 +48,27 @@ public class CollectionsHomework {
         carsAndOwners.get(carOrange).add("Marta");
         carsAndOwners.get(carOrange).add("John");
 
-        printOwnersWhichSharingCars(carBlue, carsAndOwners);
-        printOwnersWhichSharingCars(carBlack, carsAndOwners);
-        printOwnersWhichSharingCars(carGreen, carsAndOwners);
-        printOwnersWhichSharingCars(carOrange, carsAndOwners);
-        printOwnersWhichSharingCars(carPink, carsAndOwners);
-
+        printOwnersWhichSharingCars(carsAndOwners);
     }
 
-    public static void printOwnersWhichSharingCars(Car car, Map<Car, List<String>> carsAndOwners) {
-        List<String> owners = carsAndOwners.get(car);
-        List<String> result = new ArrayList<>();
-        for (int i = 0; i < owners.size(); i++) {
+    public static void printOwnersWhichSharingCars(Map<Car, List<String>> carsAndOwners) {
+        Set<Map.Entry<Car, List<String>>> cars = carsAndOwners.entrySet();
+        Set<String> result = new HashSet<>();
+
+        Iterator<Map.Entry<Car, List<String>>> iterator = cars.iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Car, List<String>> entry = iterator.next();
+            List<String> owners = entry.getValue();
             if (owners.size() >= 2) {
-                result.add(owners.get(i));
+                result.addAll(owners);
             }
         }
+
         for (String s : result) {
             System.out.print(s + " ");
         }
+
     }
+
 }
+
