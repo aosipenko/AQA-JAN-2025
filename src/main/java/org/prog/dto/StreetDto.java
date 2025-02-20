@@ -7,11 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PersonDto {
+public class StreetDto {
 
-    private NameDto name;  // Ім'я
-    private LocationDto location;
-    private String gender;
-    private String nat;
+    private int number;  // Номер будинку
+    private String name; // Назва вулиці
 
 }
+
+
+
+

@@ -7,11 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PersonDto {
+public class CoordinatesDto {
 
-    private NameDto name;  // Ім'я
-    private LocationDto location;
-    private String gender;
-    private String nat;
+    private String latitude;   // Широта
+    private String longitude;  // Довгота
 
 }

@@ -15,7 +15,7 @@ public class ApiTests {
         requestSpecification.basePath("/api");
         requestSpecification.queryParam("inc", "gender,name,nat");
         requestSpecification.queryParam("noinfo");
-        requestSpecification.queryParam("results", "3");
+        requestSpecification.queryParam("results", "30");
 
         Response response = requestSpecification.get();
 
