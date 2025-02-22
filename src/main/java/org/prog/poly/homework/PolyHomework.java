@@ -9,12 +9,15 @@ public class PolyHomework {
 
     public static void main(String[] args) {
         //TODO: create Android and IOS phones, and call usePhone() for both
+        IOS iPhone = new IOS();
+        Android samsung = new Android();
+
+        usePhone(iPhone);
+        usePhone(samsung);
     }
 
-    public static void usePhone(
-            //IPhone iPhone
-    ) {
-        //iPhone.unlock();
-        //iPhone.call();
+    public static void usePhone(IPhone phone) {
+       phone.unlock();
+       phone.call();
     }
 }
