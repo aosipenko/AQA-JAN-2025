@@ -19,40 +19,52 @@ public class ExceptionsDemo {
 //        System.out.println(carOne.hashCode());
 //        System.out.println(carTwo.hashCode());
 
-        try {
-            smth1(null);
-        } catch (NullPointerException npe) {
-            System.out.println("Oops, NPE!!");
-            //UNCHECKED
-        } catch (RuntimeException rte) {
-            System.out.println("RTE!!!");
-        } catch (Exception e) {
-            System.out.println("Exception!!");
-        } catch (Throwable t) {
-            System.out.println("Throwable!");
-        } finally {
-            System.out.println("this will always work!");
-        }
-        System.out.println("after exception");
+//        try {
+//            smth1(null);
+//        } catch (NullPointerException npe) {
+//            System.out.println("Oops, NPE!!");
+//            //UNCHECKED
+//        } catch (RuntimeException rte) {
+//            System.out.println("RTE!!!");
+//        } catch (Exception e) {
+//            System.out.println("Exception!!");
+//        } catch (Throwable t) {
+//            System.out.println("Throwable!");
+//        } finally {
+//            System.out.println("this will always work!");
+//        }
+//        System.out.println("after exception");
+
+          ExceptionsHomework ex = new ExceptionsHomework();
+
+          try {
+              ex.nullExample();
+          } catch (NullPointerException nlp) {
+              System.out.println("EXCEPTION CAUGHT!");
+          } finally {
+              System.out.println("DONE TRY-CATCH-FINALLY");
+          }
+
+
     }
 
-    public static void smth1(String s) {
-        smth2(s);
-    }
-
-    public static void smth2(String s) {
-        smth3(s);
-    }
-
-    public static void smth3(String s) {
-        smth4(s);
-    }
-
-    public static void smth4(String s) {
-        System.out.println(s.equals("a"));
-    }
-
-    public static void readFile() throws FileNotFoundException {
-        FileReader fileReader = new FileReader(new File("aaa.txt"));
-    }
+//    public static void smth1(String s) {
+//        smth2(s);
+//    }
+//
+//    public static void smth2(String s) {
+//        smth3(s);
+//    }
+//
+//    public static void smth3(String s) {
+//        smth4(s);
+//    }
+//
+//    public static void smth4(String s) {
+//        System.out.println(s.equals("a"));
+//    }
+//
+//    public static void readFile() throws FileNotFoundException {
+//        FileReader fileReader = new FileReader(new File("aaa.txt"));
+//    }
 }
