@@ -1,0 +1,7 @@
+<suite name="suite123" verbose="1">
+    <test name="Google Test">
+        <classes>
+            <class name="AutomationTests"/>
+        </classes>
+    </test>
+</suite>
