@@ -19,10 +19,16 @@ public class AutomationTests {
 //                new URL("http://selenoid-selenoid-1:4444/wd/hub"), new ChromeOptions());
 //    }
 
+        public WebDriver getRemoteDriver() throws MalformedURLException {
+        return new RemoteWebDriver(
+                new URL("http://selenoid:4444/wd/hub"), new ChromeOptions());
+    }
+
     @Test
     public void testAllo() throws MalformedURLException {
         //driver = getRemoteDriver();
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
+        driver = getRemoteDriver();
         driver.manage().window().maximize();
         driver.get("https://allo.ua/");
         List<WebElement> logos = driver.findElements(By.className("v-logo__img"));
