@@ -14,14 +14,15 @@ import java.util.List;
 public class AutomationTests {
     WebDriver driver;
 
-    public WebDriver getRemoteDriver() throws MalformedURLException {
-        return new RemoteWebDriver(
-                new URL("http://selenoid-selenoid-1:4444/wd/hub"), new ChromeOptions());
-    }
+//    public WebDriver getRemoteDriver() throws MalformedURLException {
+//        return new RemoteWebDriver(
+//                new URL("http://selenoid-selenoid-1:4444/wd/hub"), new ChromeOptions());
+//    }
 
     @Test
     public void testAllo() throws MalformedURLException {
-        driver = getRemoteDriver();
+        //driver = getRemoteDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://allo.ua/");
         List<WebElement> logos = driver.findElements(By.className("v-logo__img"));
