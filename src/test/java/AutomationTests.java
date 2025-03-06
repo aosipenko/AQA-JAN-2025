@@ -19,9 +19,9 @@ public class AutomationTests {
 //                new URL("http://selenoid-selenoid-1:4444/wd/hub"), new ChromeOptions());
 //    }
 
-        public WebDriver getRemoteDriver() throws MalformedURLException {
+    public WebDriver getRemoteDriver() throws MalformedURLException {
         return new RemoteWebDriver(
-                new URL("http://selenoid:4444/wd/hub"), new ChromeOptions());
+                new URL("http://localhost:4444/wd/hub"), new ChromeOptions());
     }
 
     @Test
