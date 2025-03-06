@@ -21,20 +21,17 @@ public class AutomationTests {
 
     public WebDriver getRemoteDriver() throws MalformedURLException {
         return new RemoteWebDriver(
-                new URL("http://localhost:8080/wd/hub"), new ChromeOptions());
+                new URL("http://localhost:8080/"), new ChromeOptions());
     }
 
     @Test
     public void testAllo() throws MalformedURLException {
-        //driver = getRemoteDriver();
-        //driver = new ChromeDriver();
         driver = getRemoteDriver();
         driver.manage().window().maximize();
         driver.get("https://allo.ua/");
         List<WebElement> logos = driver.findElements(By.className("v-logo__img"));
         Assert.assertFalse(logos.isEmpty());
         driver.quit();
-
     }
 
 }
