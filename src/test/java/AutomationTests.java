@@ -21,7 +21,7 @@ public class AutomationTests {
 
     public WebDriver getRemoteDriver() throws MalformedURLException {
         return new RemoteWebDriver(
-                new URL("http://localhost:4444/wd/hub"), new ChromeOptions());
+                new URL("http://localhost:8080/wd/hub"), new ChromeOptions());
     }
 
     @Test
