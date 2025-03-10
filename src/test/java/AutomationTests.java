@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
@@ -20,18 +22,29 @@ public class AutomationTests {
 //    }
 
     public WebDriver getRemoteDriver() throws MalformedURLException {
-        return new RemoteWebDriver(
-                new URL("http://localhost:8080/"), new ChromeOptions());
+//        return new RemoteWebDriver(
+//                new URL("http://localhost:4444/wd/hub"), new ChromeOptions());
+        return new ChromeDriver();
+    }
+
+    @BeforeSuite
+    public void before() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 
     @Test
     public void testAllo() throws MalformedURLException {
-        driver = getRemoteDriver();
-        driver.manage().window().maximize();
         driver.get("https://allo.ua/");
         List<WebElement> logos = driver.findElements(By.className("v-logo__img"));
         Assert.assertFalse(logos.isEmpty());
-        driver.quit();
+    }
+
+    @AfterSuite
+    public void after() {
+        if(driver != null){
+            driver.quit();
+        }
     }
 
 }
