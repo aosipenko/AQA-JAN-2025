@@ -10,6 +10,7 @@ import java.util.Map;
 // 1. bind one person to a single car
 // 2. bind one person to multiple cars
 // 3. add logic to count cars for specific person
+// 4. add some comments
 
 //TODO: Make cars unique for each drive
 
@@ -17,7 +18,7 @@ public class MapsPractice {
 
     public static void main(String[] args) {
         String driver1 = "John";
-        String driver2 = "Jane";
+        String driver2 = "Janet";
         String driver3 = "Joe";
 
         Map<String, List<Car>> ownedCars = new HashMap<>();
